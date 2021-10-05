@@ -23,6 +23,9 @@ console.log(pms(123456789, { max: 2 })); // Output => 1 day 10 hours
 console.log(pms(123456789, { expanded: false })); // Output => 1 d 10 h 17 m 36 s 789 ms
 console.log(pms(123456789, { max: 2, expanded: false })); // Output => 1 d 10 h
 
+console.log(a(354678902, { returnObject: false, till: "second" })); // Output => 4 d 2 h 31 m 31 s
+console.log(a(354678902, { returnObject: true })); // Output => { day: 4, hour: 2, minute: 31, second: 18, millisecond: 902 }
+
 console.log(pms("hour1")); // Output => undefined
 console.log(pms("hello world")); // Output => undefined
 ```

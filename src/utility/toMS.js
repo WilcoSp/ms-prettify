@@ -6,7 +6,7 @@ const convert = require('./getType');
  * @returns {Number} The time in milliseconds.
  */
 module.exports = (string) => {
-    const strings = string.toLowerCase().trim().split(" ");
+    const strings = string.toLowerCase().trim().split(/ +/g);
     let number = 0, fails = 0, trials = 0;
 
     strings.forEach((v, i) => {
@@ -19,12 +19,12 @@ module.exports = (string) => {
                 let value = convert(strings[i + 1].trim().toLowerCase());
                 if (value) number += value * parseInt(v);
                 else fails++
-
             }
         } else {
             let no = parseInt(v), str = v.substring(no.toString().length).trim().toLowerCase();
             let value = convert(str);
-            if (value) number += no * value;
+
+            if (value && no) number += no * value;
             else fails++;
         }
     });
