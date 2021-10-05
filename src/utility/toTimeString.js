@@ -12,7 +12,7 @@ module.exports = (number, max, expanded, obj, till) => {
         if (till === ms.type) number = 0;
     }
 
-    if (!expanded) time = time.replace(/year+s?/, "y").replace(/week+s?/, "w").replace(/day+s?/, "d").replace(/hour+s?/, "h").replace(/minute+s?/, "m").replace(/second+s?/, "s").replace(/millisecond+s?/, "ms")
+    if (!expanded) time = time.replace(/year+s?/, "y")?.replace(/week+s?/, "w")?.replace(/day+s?/, "d")?.replace(/hour+s?/, "h")?.replace(/minute+s?/, "m")?.replace(/second+s?/, "s")?.replace(/millisecond+s?/, "ms")
 
     return obj ? data : time;
 }

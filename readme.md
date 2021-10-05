@@ -6,6 +6,8 @@ npm i ms-prettify
 # What ?
 An module to convert MS to human readable time and Human readable time to MS, with advanced options.
 
+# Note
+- Needs Node JS V - 14 at least.
 # Why ?
 - Easy to use.
 - Advanced options for manipulating the reult.
