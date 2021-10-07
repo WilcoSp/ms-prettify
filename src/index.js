@@ -2,9 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var toMS_1 = require("./utility/toMS");
 var toTimeString_1 = require("./utility/toTimeString");
-/**
- * An module to convert MS time to human readable string and vice versa.
- */
 function convertor(time, options) {
     if (options === void 0) { options = {}; }
     if (typeof (time) !== "number" && typeof (time) !== "string")
