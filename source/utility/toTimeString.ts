@@ -13,7 +13,7 @@ export default function (number: number , max: number, expanded: boolean, obj: b
         if (till === ms.type) number = 0;
     }
 
-    if (!expanded) time = time.replace(/year+s?/, "y")?.replace(/week+s?/, "w")?.replace(/day+s?/, "d")?.replace(/hour+s?/, "h")?.replace(/minute+s?/, "m")?.replace(/second+s?/, "s")?.replace(/millisecond+s?/, "ms")
+    if (!expanded) time = time.replace(/(year|day|hour|minute|second)s?/g, x => x[0])?.replace(/millisecond+s?/, "ms");
 
     return obj ? data : time;
 }
