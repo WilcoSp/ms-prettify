@@ -1,4 +1,5 @@
 import convert from './getType';
+import JAN from './justANumber';
 
 /**
  * Convert Human readable time to milliseconds.
@@ -13,11 +14,12 @@ export default function (string: string): number {
         trials++;
 
         // Value is a number
-        if (typeof (v) === "number") {
-            if (typeof (strings[i + 1]) === "number") { number += Math.floor(v); fails-- } // Next value is also a number
+        if (JAN(v)) {
+            let t = parseInt(v);
+            if (JAN(strings[i + 1]) || !strings[i+1]) { number += t; fails-- } // Next value is also a number
             else {
                 let value = convert(strings[i + 1].trim()?.toLowerCase());
-                if (value) number += value * Math.floor(v);
+                if (value) number += value * t;
                 else fails++
             }
         } else {

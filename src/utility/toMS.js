@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var getType_1 = require("./getType");
+var justANumber_1 = require("./justANumber");
 /**
  * Convert Human readable time to milliseconds.
  * @param {String} string The human readable time string.
@@ -14,15 +15,16 @@ function default_1(string) {
         var _a, _b, _c, _d;
         trials++;
         // Value is a number
-        if (typeof (v) === "number") {
-            if (typeof (strings[i + 1]) === "number") {
-                number += Math.floor(v);
+        if ((0, justANumber_1.default)(v)) {
+            var t = parseInt(v);
+            if ((0, justANumber_1.default)(strings[i + 1]) || !strings[i + 1]) {
+                number += t;
                 fails--;
             } // Next value is also a number
             else {
                 var value = (0, getType_1.default)((_a = strings[i + 1].trim()) === null || _a === void 0 ? void 0 : _a.toLowerCase());
                 if (value)
-                    number += value * Math.floor(v);
+                    number += value * t;
                 else
                     fails++;
             }
