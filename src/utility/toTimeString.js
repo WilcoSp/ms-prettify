@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var getMS_1 = require("./getMS");
+const getMS_1 = require("./getMS");
 function default_1(number, max, expanded, obj, till) {
     var _a, _b, _c, _d, _e, _f;
-    var time = "", data = {};
+    let time = "", data = {};
     while (number > 0 && max > 0) {
-        var ms = (0, getMS_1.default)(number);
+        let ms = (0, getMS_1.default)(number);
         data[ms.type] = ms.value;
         number = ms.time;
         time += ms.string;

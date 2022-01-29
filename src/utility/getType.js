@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24, week = day * 7, year = day * 365.25;
-exports.default = (function (string) {
+const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24, week = day * 7, year = day * 365.25;
+exports.default = (string) => {
     switch (string) {
         case 'years':
         case 'year':
@@ -51,4 +51,4 @@ exports.default = (function (string) {
         default:
             return undefined;
     }
-});
+};

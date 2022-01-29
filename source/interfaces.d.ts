@@ -21,3 +21,7 @@ export interface ReturnObject {
     week?: number,
     year?: number,
 }
+
+export interface indexable {
+    [key: string]: any
+}

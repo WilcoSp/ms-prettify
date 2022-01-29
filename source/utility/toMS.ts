@@ -6,7 +6,7 @@ import JAN from './justANumber';
  * @param {String} string The human readable time string.
  * @returns {Number} The time in milliseconds.
  */
-export default function (string: string): number {
+export default function (string: string): number|undefined {
     const strings = string.toLowerCase()?.trim()?.split(/ +/g);
     let number = 0, fails = 0, trials = 0;
 

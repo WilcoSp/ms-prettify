@@ -1,8 +1,8 @@
 import getMS from './getMS';
-import { ReturnObject } from '../interfaces';
+import { ReturnObject,indexable } from '../interfaces';
 
-export default function (number: number , max: number, expanded: boolean, obj: boolean, till: "year" | "week" | "day" | "hour" | "minute" | "second" | "millisecond"): string | ReturnObject {
-    let time = "", data = {};
+export default function (number: number, max: number, expanded: boolean, obj: boolean, till: "year" | "week" | "day" | "hour" | "minute" | "second" | "millisecond"): string | ReturnObject {
+    let time = "", data: indexable = {};
 
     while (number > 0 && max > 0) {
         let ms = getMS(number);
