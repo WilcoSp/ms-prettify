@@ -3,10 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const getMS_1 = require("./getMS");
 function default_1(number, max, expanded, obj, till) {
     var _a, _b, _c, _d, _e, _f;
-    let time = "", data = {};
+    let time = "", data = {}, negative = number < 0;
+    if (negative)
+        time = "-";
+    number = Math.abs(number);
     while (number > 0 && max > 0) {
         let ms = (0, getMS_1.default)(number);
-        data[ms.type] = ms.value;
+        data[ms.type] = ms.value * (negative ? -1 : 1);
         number = ms.time;
         time += ms.string;
         max--;

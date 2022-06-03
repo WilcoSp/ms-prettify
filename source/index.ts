@@ -21,7 +21,7 @@ function convertor(time: string | number, options: Options = {}) {
     if (typeof (returnObject) !== "boolean") throw new TypeError("Expanded should be a boolean type");
     if (!type.some(v => v === till)) throw new Error(`Till should be one of these values : ${type.join(", ")} but we got ${JSON.stringify(till)}`)
 
-    if (typeof (time) === "string") return toMS(time);
+    if (typeof (time) === "string") return toMS(time?.trim());
     else return toTimeString(time, max, expanded, returnObject, till);
 }
 

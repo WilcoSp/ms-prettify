@@ -16,7 +16,7 @@ function convertor(time, options = {}) {
     if (!type.some(v => v === till))
         throw new Error(`Till should be one of these values : ${type.join(", ")} but we got ${JSON.stringify(till)}`);
     if (typeof (time) === "string")
-        return (0, toMS_1.default)(time);
+        return (0, toMS_1.default)(time === null || time === void 0 ? void 0 : time.trim());
     else
         return (0, toTimeString_1.default)(time, max, expanded, returnObject, till);
 }
