@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const getMS_1 = require("./getMS");
 function default_1(number, max, expanded, obj, till) {
-    var _a, _b, _c, _d, _e, _f;
+    var _a;
     let time = "", data = {}, negative = number < 0;
     if (negative)
         time = "-";
@@ -17,7 +17,7 @@ function default_1(number, max, expanded, obj, till) {
             number = 0;
     }
     if (!expanded)
-        time = (_f = (_e = (_d = (_c = (_b = (_a = time.replace(/year+s?/, "y")) === null || _a === void 0 ? void 0 : _a.replace(/week+s?/, "w")) === null || _b === void 0 ? void 0 : _b.replace(/day+s?/, "d")) === null || _c === void 0 ? void 0 : _c.replace(/hour+s?/, "h")) === null || _d === void 0 ? void 0 : _d.replace(/minute+s?/, "m")) === null || _e === void 0 ? void 0 : _e.replace(/second+s?/, "s")) === null || _f === void 0 ? void 0 : _f.replace(/millisecond+s?/, "ms");
+        time = (_a = time.replace(/(year|day|hour|minute|second)s?/g, x => x[0])) === null || _a === void 0 ? void 0 : _a.replace(/millisecond+s?/, "ms");
     return obj ? data : time;
 }
 exports.default = default_1;
