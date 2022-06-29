@@ -1,9 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
     "sourceMap": false,
-    "outDir": "src"
+    "declaration": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "allowUnreachableCode": false,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "module": "commonjs",
+    "target": "es2022",
+    "allowJs": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "removeComments": true
   },
-  "include": ["./source"]
+  "include": ["./src"]
 }
