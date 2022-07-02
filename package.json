@@ -1,11 +1,12 @@
 {
   "name": "ms-prettify",
-  "version": "1.3.2",
-  "description": "An module to easily convert milliseconds to human readable time and opposite.",
-  "main": "src/index.js",
-  "types": "source/",
+  "version": "1.3.3",
+  "description": "An module to easily convert milliseconds to human readable time and vice versa",
+  "main": "dist/index.js",
+  "types": "dist/",
   "scripts": {
-    "test": "node src/index.js"
+    "test": "echo \"no tests available\"",
+    "build": "npx tsc --project tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,13 @@
     "time"
   ],
   "author": "shisui",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/KartikeSingh/ms-prettify/issues"
   },
-  "homepage": "https://github.com/KartikeSingh/ms-prettify#readme"
+  "homepage": "https://github.com/KartikeSingh/ms-prettify#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^4.7.4"
+  }
 }

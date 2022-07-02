@@ -20,7 +20,7 @@ export default function (number: number, max: number, expanded: boolean, obj: bo
         if (till === ms.type) number = 0;
     }
 
-    if (!expanded) time = time.replace(/(year|day|hour|minute|second)s?/g, x => x[0])?.replace(/millisecond+s?/, "ms");
+    if (!expanded) time = time.replace(/(year|day|hour|minute|second|week)s?/g, x => x[0])?.replace(/millisecond+s?/, "ms");
 
     return obj ? data : time;
 }
