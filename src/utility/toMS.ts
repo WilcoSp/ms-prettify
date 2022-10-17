@@ -8,14 +8,14 @@ import JAN from './justANumber';
  */
 export default function (string: string): number | undefined {
     const strings = string.toLowerCase()?.trim()?.split(/ +/g);
-    let negative = string.startsWith("-"), number = 0, fails = 0, trials = 0;
+    let number = 0, fails = 0, trials = 0;
 
     strings.forEach((v, i) => {
         trials++;
 
         // Value is a number
         if (JAN(v)) {
-            let t = Math.abs(parseInt(v));
+            let t = Math.abs(parseFloat(v));
             if (JAN(strings[i + 1]) || !strings[i + 1]) { number += t; fails-- } // Next value is also a number
             else {
                 let value = convert(strings[i + 1].trim()?.toLowerCase());
@@ -23,7 +23,7 @@ export default function (string: string): number | undefined {
                 else fails++
             }
         } else {
-            let no = Math.abs(parseInt(v)), str = v.substring(no.toString()?.length)?.trim()?.toLowerCase();
+            let no = parseFloat(v), str = v.substring(no.toString()?.length)?.trim()?.toLowerCase();
             let value = convert(str);
 
             if (value && no) number += no * value;
@@ -31,5 +31,5 @@ export default function (string: string): number | undefined {
         }
     });
 
-    return fails === strings.length ? undefined : number * (negative ? -1 : 1);
+    return fails === strings.length ? undefined : number;
 }
