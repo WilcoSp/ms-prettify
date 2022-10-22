@@ -4,7 +4,7 @@ npm i ms-prettify
 ```
 
 # What is it?
-An module to convert MS to human readable time and Human readable time to MS, with advanced options.
+An module to convert MS to human readable time to MS with advanced options.
 
 # Note
 - Requires Node.jS v14 or later.
@@ -58,4 +58,4 @@ await timer("15 seconds");
 ```
 
 # Support
-for support or issues or queries contace me on my [discord server](https://discord.gg/XYnMTQNTFh) or create a issue [here](https://github.com/KartikeSingh/ms-prettify/issues).
+for support or issues, contact me on my [discord server](https://discord.gg/XYnMTQNTFh) or create a issue [here](https://github.com/KartikeSingh/ms-prettify/issues).
