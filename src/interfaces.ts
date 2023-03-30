@@ -5,12 +5,12 @@ export interface Options {
   returnObject?: boolean;
 }
 
-export interface Options2 {
-  till?: 'year' | 'week' | 'day' | 'hour' | 'minute' | 'second' | 'millisecond';
-  max?: number;
-  expanded?: boolean;
-  returnObject: true;
-}
+// export interface Options2 {
+//   till?: 'year' | 'week' | 'day' | 'hour' | 'minute' | 'second' | 'millisecond';
+//   max?: number;
+//   expanded?: boolean;
+//   returnObject: true;
+// }
 
 export interface ReturnObject {
   millisecond?: number;

@@ -1,5 +1,5 @@
-import getMS from './getMS';
-import { ReturnObject, indexable } from '../interfaces';
+import getMS from './getMS.js';
+import { ReturnObject, indexable } from '../interfaces.js';
 
 export default function (
   number: number,

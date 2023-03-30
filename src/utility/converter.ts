@@ -1,6 +1,6 @@
-import toMS from './toMS';
-import toTimeString from './toTimeString';
-import { Options, ReturnObject, Options2 } from '../interfaces';
+import toMS from './toMS.js';
+import toTimeString from './toTimeString.js';
+import { Options, ReturnObject } from '../interfaces.js';
 
 const type: String[] = [
   'year',
@@ -15,13 +15,16 @@ const type: String[] = [
 /**
  * An module to convert MS time to human readable string and vice versa.
  */
-function converter(time: string): number;
-function converter(time: string, options: Options): number;
-function converter(time: number): string;
-function converter(time: number, options: Options2): ReturnObject;
-function converter(time: number, options: Options): string;
+export function converter(time: string): number;
+export function converter(time: string, options: Options): number;
+export function converter(time: number): string;
+export function converter(
+  time: number,
+  options: Options & { returnObject: true }
+): ReturnObject;
+export function converter(time: number, options: Options): string;
 
-function converter(time: string | number, options: Options = {}) {
+export function converter(time: string | number, options: Options = {}) {
   if (typeof time !== 'number' && typeof time !== 'string')
     throw new TypeError(
       'Inavlid time was provided, It should be either a number or human readable time string'
@@ -51,5 +54,3 @@ function converter(time: string | number, options: Options = {}) {
   if (typeof time === 'string') return toMS(time?.trim());
   return toTimeString(time, max, expanded, returnObject, till);
 }
-
-export default converter;

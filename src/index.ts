@@ -1,11 +1,7 @@
-import converter from './utility/converter';
-import timer from './utility/timer';
-// import stopWatch from "./utility/stopWatch";
+import { converter } from './utility/converter.js';
+export { converter, converter as pms };
+// export { timer } from './utility/timer.js';
 
 export default converter;
 
-export {
-  converter,
-  timer
-  // stopWatch
-};
+export type { Options } from './interfaces';

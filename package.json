@@ -1,16 +1,32 @@
 {
-  "name": "ms-prettify",
-  "version": "1.4.0",
+  "name": "@wilcosp/ms-prettify",
+  "version": "2.0.0-beta23Mar30A",
   "description": "An module to easily convert milliseconds to human readable time and vice versa",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./timer": {}
+  },
   "scripts": {
     "test": "echo \"no tests available\"",
-    "build": "npx tsc --project tsconfig.json"
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc --project tsconfig.json",
+    "build:cjs": "tsc --project cjs.tsconfig.json && npm run copy:cjs",
+    "copy:cjs": "cp cjs.package.json dist/cjs/package.json || copy cjs.package.json dist/cjs/package.json"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KartikeSingh/ms-prettify.git"
+    "url": "git+https://github.com/WilcoSp/ms-prettify"
   },
   "keywords": [
     "ms",
@@ -18,21 +34,27 @@
     "convert",
     "time"
   ],
+  "contributors": [
+    "KartikeSingh <https://github.com/KartikeSingh>",
+    "Null8626 <https://github.com/null8626>",
+    "WilcoSp <https://github.com/WilcoSp>"
+  ],
   "author": "shisui",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KartikeSingh/ms-prettify/issues"
+    "url": "https://github.com/WilcoSp/ms-prettify/issues"
   },
-  "homepage": "https://github.com/KartikeSingh/ms-prettify#readme",
+  "homepage": "https://github.com/WilcoSp/ms-prettify",
   "devDependencies": {
-    "@types/node": "^18.0.0",
-    "typescript": "^4.7.4",
-    "prettier": "^2.6.2"
+    "@types/node": "^18.15.11",
+    "prettier": "^2.8.7",
+    "typescript": "^4.9.5"
   },
   "prettier": {
     "semi": true,
     "singleQuote": true,
     "trailingComma": "none",
-    "htmlWhitespaceSensitivity": "ignore"
+    "htmlWhitespaceSensitivity": "ignore",
+    "tabWidth": 4
   }
 }

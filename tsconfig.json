@@ -10,13 +10,24 @@
     "noUnusedParameters": true,
     "strict": true,
     "strictFunctionTypes": true,
-    "module": "commonjs",
-    "target": "ES6",
+    "module": "ES2020",
+    "target": "ES2020",
     "allowJs": true,
-    "outDir": "dist",
+    "outDir": "dist/esm",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "removeComments": true
+    "removeComments": true,
+    "importsNotUsedAsValues": "remove",
+    "lib": [
+      "ESNext",
+      "ESNext.Array",
+      "ESNext.AsyncIterable",
+      "ESNext.Intl",
+      "ESNext.BigInt",
+      "ESNext.Symbol",
+      "ESNext.Promise",
+      "ES2020.Symbol.WellKnown"
+    ]
   },
   "include": ["./src"]
 }
