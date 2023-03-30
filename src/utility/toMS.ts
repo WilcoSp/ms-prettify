@@ -31,8 +31,6 @@ export default function (value: string): number | null {
     }
     const values = value.split(/ +/g);
     let ms = 0;
-    // fails = 0,
-    // trials = 0;
 
     ms: for (let [i, v] of values.entries()) {
         v = v.trim();
@@ -79,31 +77,4 @@ export default function (value: string): number | null {
     }
 
     return ms;
-
-    // strings.forEach((v, i) => {
-    //     trials++;
-
-    //     // Value is a number
-    //     if (JaN(v)) {
-    //         let t = Math.abs(parseFloat(v));
-    //         if (JaN(strings[i + 1]) || !strings[i + 1]) {
-    //             number += t;
-    //             fails--;
-    //         } // Next value is also a number
-    //         else {
-    //             let value = convert(strings[i + 1].trim()?.toLowerCase());
-    //             if (value) number += value * t;
-    //             else fails++;
-    //         }
-    //     } else {
-    //         let no = parseFloat(v),
-    //             str = v.substring(no.toString()?.length)?.trim()?.toLowerCase();
-    //         let value = convert(str);
-
-    //         if (value && no) number += no * value;
-    //         else fails++;
-    //     }
-    // });
-
-    // return fails === values.length ? undefined : ms;
 }
