@@ -1,60 +1,65 @@
 {
-  "name": "@wilcosp/ms-prettify",
-  "version": "2.0.0-beta23Mar30A",
-  "description": "An module to easily convert milliseconds to human readable time and vice versa",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/esm/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+    "name": "@wilcosp/ms-prettify",
+    "version": "2.0.0-beta23Mar30A",
+    "description": "An module to easily convert milliseconds to human readable time and vice versa",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/esm/index.d.ts",
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js"
+        },
+        "./timer": {
+            "types": "./dist/esm/utility/timer.d.ts",
+            "import": "./dist/esm/utility/timer.js",
+            "require": "./dist/esm/utility/timer.js"
+        }
     },
-    "./timer": {}
-  },
-  "scripts": {
-    "test": "echo \"no tests available\"",
-    "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc --project tsconfig.json",
-    "build:cjs": "tsc --project cjs.tsconfig.json && npm run copy:cjs",
-    "copy:cjs": "cp cjs.package.json dist/cjs/package.json || copy cjs.package.json dist/cjs/package.json"
-  },
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WilcoSp/ms-prettify"
-  },
-  "keywords": [
-    "ms",
-    "prettify",
-    "convert",
-    "time"
-  ],
-  "contributors": [
-    "KartikeSingh <https://github.com/KartikeSingh>",
-    "Null8626 <https://github.com/null8626>",
-    "WilcoSp <https://github.com/WilcoSp>"
-  ],
-  "author": "shisui",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/WilcoSp/ms-prettify/issues"
-  },
-  "homepage": "https://github.com/WilcoSp/ms-prettify",
-  "devDependencies": {
-    "@types/node": "^18.15.11",
-    "prettier": "^2.8.7",
-    "typescript": "^4.9.5"
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "htmlWhitespaceSensitivity": "ignore",
-    "tabWidth": 4
-  }
+    "scripts": {
+        "test": "echo \"no tests available\"",
+        "build": "npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc --project tsconfig.json",
+        "build:cjs": "tsc --project cjs.tsconfig.json && npm run copy:cjs",
+        "copy:cjs": "cp cjs.package.json dist/cjs/package.json || copy cjs.package.json dist/cjs/package.json",
+        "prepublishOnly": "rm -r -f ./dist && npm run build"
+    },
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/WilcoSp/ms-prettify"
+    },
+    "keywords": [
+        "ms",
+        "prettify",
+        "convert",
+        "time"
+    ],
+    "contributors": [
+        "KartikeSingh <https://github.com/KartikeSingh>",
+        "Null8626 <https://github.com/null8626>",
+        "WilcoSp <https://github.com/WilcoSp>"
+    ],
+    "author": "shisui",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/WilcoSp/ms-prettify/issues"
+    },
+    "homepage": "https://github.com/WilcoSp/ms-prettify",
+    "devDependencies": {
+        "@types/node": "^18.15.11",
+        "prettier": "^2.8.7",
+        "typescript": "^4.9.5"
+    },
+    "prettier": {
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "htmlWhitespaceSensitivity": "ignore",
+        "tabWidth": 4
+    }
 }
