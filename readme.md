@@ -12,19 +12,19 @@ An module to convert MS to human readable time to MS with advanced options.
 
 # Note
 
-- Requires Node.jS v16 or later.
+-   Requires Node.jS v16 or later.
 
 # Why?
 
-- Easy to use.
-- Advanced options for manipulating the result.
-- Support both TypeScript and JavaScript.
+-   Easy to use.
+-   Advanced options for manipulating the result.
+-   Support both TypeScript and JavaScript.
 
 # How?
 
 ```js
 import { pms } from '@wilcosp/ms-prettify'; // for TypeScript/ECMAScript usage
-// const { pms } = require('ms-prettify') for commonjs
+// const { pms } = require('@wilcosp/ms-prettify') for commonjs
 
 console.log(pms('1hour 10 min')); // Output => 4200000
 console.log(pms('1hour 10 min 1y')); // Output => 31561800000
@@ -49,7 +49,7 @@ console.log(pms('hello world')); // Output => undefined
 ```js
 import { timer } from 'ms-prettify/timer'; // for TypeScript/ECMAScript usage
 // const { timer } = require('@wilcosp/ms-prettify/timer');
-// Can also be imported as `import { timer } from "@wilcosp/ms-prettify"` if needed or for compatibility with the old version, but this export will be dropped in a future major or minor version
+// Can also be imported with `import { timer } from "@wilcosp/ms-prettify"` if needed or for compatibility with the old version, but this export will be dropped in a future major or minor version
 
 /**
  * @param {Number} time Time after which timer should be executed
@@ -57,9 +57,9 @@ import { timer } from 'ms-prettify/timer'; // for TypeScript/ECMAScript usage
  * @param {...any[]} args arguments for the callback function
  */
 timer(
-  '10 minutes 12 second',
-  (data, client) => client.doSomething(data),
-  await getDataSomehow()
+    '10 minutes 12 second',
+    (data, client) => client.doSomething(data),
+    await getDataSomehow()
 );
 
 // Other ways to use
