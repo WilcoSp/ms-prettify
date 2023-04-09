@@ -1,28 +1,47 @@
 {
     "name": "@wilcosp/ms-prettify",
-    "version": "2.0.0-beta23Mar30A",
+    "version": "2.0.0-beta2023April09A",
     "description": "An module to easily convert milliseconds to human readable time and vice versa",
+    "private": false,
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
-    "types": "dist/",
+    "types": "dist/esm/",
+    "jsdelivr": "dist/esm/index.min.js",
+    "unpkg": "dist/esm/index.min.js",
+    "skypack": "dist/esm/index.min.js",
+    "browser": "dist/esm/index.min.js",
+    "deno": "dist/esm/index.js",
     "type": "module",
     "exports": {
         ".": {
             "types": "./dist/esm/index.d.ts",
+            "jsdelivr": "./dist/esm/index.js",
+            "unpkg": "./dist/esm/index.min.js",
+            "browser": "./dist/esm/index.min.js",
+            "skypack": "./dist/esm/index.min.js",
+            "deno": "./dist/esm/index.js",
             "import": "./dist/esm/index.js",
-            "require": "./dist/cjs/index.js"
+            "require": "./dist/cjs/index.js",
+            "default": "./dist/esm/index.js"
         },
         "./timer": {
             "types": "./dist/esm/utility/timer.d.ts",
+            "jsdelivr": "./dist/esm/utility/timer.js",
+            "unpkg": "./dist/esm/utility/timer.js",
+            "browser": "./dist/esm/utility/timer.js",
+            "skypack": "./dist/esm/utility/timer.js",
+            "deno": "./dist/esm/utility/timer.js",
             "import": "./dist/esm/utility/timer.js",
-            "require": "./dist/esm/utility/timer.js"
+            "require": "./dist/esm/utility/timer.js",
+            "default": "./dist/esm/utility/timer.js"
         }
     },
     "scripts": {
         "test": "echo \"no tests available\"",
-        "build": "npm run build:esm && npm run build:cjs",
+        "build": "npm run build:esm && npm run build:cjs && npm run build:min",
         "build:esm": "tsc --project tsconfig.json",
         "build:cjs": "tsc --project cjs.tsconfig.json && npm run copy:cjs",
+        "build:min": "node esbuild.js",
         "copy:cjs": "cp cjs.package.json dist/cjs/package.json || copy cjs.package.json dist/cjs/package.json",
         "prepublishOnly": "rm -r -f ./dist && npm run build"
     },
@@ -53,11 +72,12 @@
     "devDependencies": {
         "@types/node": "^18.15.11",
         "prettier": "^2.8.7",
-        "typescript": "^4.9.5"
+        "typescript": "^4.9.5",
+        "esbuild": "^0.17.15"
     },
     "prettier": {
         "semi": true,
-        "singleQuote": true,
+        "singleQuote": false,
         "trailingComma": "none",
         "htmlWhitespaceSensitivity": "ignore",
         "tabWidth": 4
